@@ -2,6 +2,7 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import practiceRoute from "./routes/practice.route.js";
 import * as dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 
 export const app = express();
