@@ -12,6 +12,8 @@ app.get("/", function (request, response) {
   response.send("🙋‍♂️, 🌏 🎊🤩");
 });
 
+app.use(cors());
+
 const MONGO_URL = process.env.MONGO_URL;
 const client = new MongoClient(MONGO_URL);
 await client.connect(); // top level await we use await anywhere
