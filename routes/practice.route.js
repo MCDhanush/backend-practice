@@ -24,7 +24,7 @@ router.get("/:id", async function (req, res) {
   const result = await client
     .db("practice-data")
     .collection("data")
-    .findOne({ _id: new ObjectId(id) });
+    .findOne({ id: id });
   console.log(result);
   result
     ? res.send(result)
@@ -41,7 +41,7 @@ router.put("/:id", async function (req, res) {
   const result = await client
     .db("practice-data")
     .collection("data")
-    .updateOne({ _id: new ObjectId(id) }, { $set: data });
+    .updateOne({ id: id }, { $set: data });
   console.log(result);
   result
     ? res.send(result)
