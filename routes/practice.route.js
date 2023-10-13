@@ -68,7 +68,7 @@ router.delete("/:id", async function (req, res) {
   const data = await client
     .db("practice-data")
     .collection("data")
-    .deleteOne({ _id: new ObjectId(id) });
+    .deleteOne({ id: id });
   data
     ? res.send({ data })
     : res.status(404).send({ message: "invalid token" });
